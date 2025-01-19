@@ -1,13 +1,10 @@
 from django.urls import path
 from . import views
-'''
-you are able to use <a href="{% url 'posts:list' %}">
-with app_name and name variables
-'''
 
 app_name = 'posts'
 
 urlpatterns = [
     path('', views.posts_list, name="list"),
+    path('new-post/', views.post_new, name="new-post"),
     path('<slug:slug>', views.post_page, name="page"),
 ]
